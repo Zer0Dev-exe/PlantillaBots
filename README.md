@@ -30,3 +30,35 @@
     Renombra el archivo `.env.example` a `.env` con el siguiente comando:
     ```bash
     mv .env.example .env
+    Abre el archivo `.env` y configura las variables necesarias.
+
+
+## 🚀 Uso
+Para iniciar el bot, usa el siguiente comando:
+    ```bash
+    node .
+
+## 📂 Estructura del Proyecto
+    ```plaintext
+    📁 ComandosPrefix/  - Contiene los comandos que utilizan un prefijo.  
+    📁 ComandosSlash/   - Incluye los comandos tipo slash.  
+    📁 Esquemas/        - Modelos y esquemas de datos.  
+    📁 Eventos/         - Manejadores de eventos.  
+    📁 Funciones/       - Funciones reutilizables.  
+    📁 Handlers/        - Manejadores para diferentes procesos del bot.  
+    🔑 .env.example     - Archivo de configuración de entorno.
+    📄 index.js         - Punto de entrada principal del bot.  
+    ```
+
+## 🤝 Contribuciones
+    Las contribuciones son bienvenidas. Si deseas contribuir, sigue estos pasos:
+    ```bash
+    1. 🍴 Haz un fork del proyecto.
+    2. 🌱 Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
+    3. 🛠️ Realiza tus cambios y haz commit (git commit -am 'Añadir nueva funcionalidad').
+    4. 🚀 Sube tus cambios (git push origin feature/nueva-funcionalidad).
+    5. 🔄 Abre un Pull Request.
+
+## 📜 Licencia
+    ```plaintext
+    📄 Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
