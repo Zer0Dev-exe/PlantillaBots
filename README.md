@@ -35,11 +35,12 @@
 
 ## 🚀 Uso
 Para iniciar el bot, usa el siguiente comando:
-    ```bash
+    ```
     node .
+    ```
 
 ## 📂 Estructura del Proyecto
-    ```plaintext
+    ```
     📁 ComandosPrefix/  - Contiene los comandos que utilizan un prefijo.  
     📁 ComandosSlash/   - Incluye los comandos tipo slash.  
     📁 Esquemas/        - Modelos y esquemas de datos.  
@@ -52,7 +53,7 @@ Para iniciar el bot, usa el siguiente comando:
 
 ## 🤝 Contribuciones
     Las contribuciones son bienvenidas. Si deseas contribuir, sigue estos pasos:
-    ```bash
+    ```
     1. 🍴 Haz un fork del proyecto.
     2. 🌱 Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
     3. 🛠️ Realiza tus cambios y haz commit (git commit -am 'Añadir nueva funcionalidad').
@@ -60,5 +61,6 @@ Para iniciar el bot, usa el siguiente comando:
     5. 🔄 Abre un Pull Request.
 
 ## 📜 Licencia
-    ```plaintext
+    ```
     📄 Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
+    ```
