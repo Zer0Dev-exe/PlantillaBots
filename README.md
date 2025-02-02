@@ -21,16 +21,19 @@
    ```bash
    git clone https://github.com/Zer0Dev-exe/PlantillaBots.git
    cd PlantillaBots
+   ```
 
 2. Instala las dependencias:
    ```bash
    npm install
+   ```
 
 3. Configura las variables de entorno:
     Renombra el archivo `.env.example` a `.env` con el siguiente comando:
     ```bash
     mv .env.example .env
     Abre el archivo `.env` y configura las variables necesarias.
+    ```
 
 
 ## 🚀 Uso
@@ -40,7 +43,6 @@ Para iniciar el bot, usa el siguiente comando:
     ```
 
 ## 📂 Estructura del Proyecto
-    ```
     📁 ComandosPrefix/  - Contiene los comandos que utilizan un prefijo.  
     📁 ComandosSlash/   - Incluye los comandos tipo slash.  
     📁 Esquemas/        - Modelos y esquemas de datos.  
@@ -49,7 +51,6 @@ Para iniciar el bot, usa el siguiente comando:
     📁 Handlers/        - Manejadores para diferentes procesos del bot.  
     🔑 .env.example     - Archivo de configuración de entorno.
     📄 index.js         - Punto de entrada principal del bot.  
-    ```
 
 ## 🤝 Contribuciones
     Las contribuciones son bienvenidas. Si deseas contribuir, sigue estos pasos:
@@ -59,6 +60,7 @@ Para iniciar el bot, usa el siguiente comando:
     3. 🛠️ Realiza tus cambios y haz commit (git commit -am 'Añadir nueva funcionalidad').
     4. 🚀 Sube tus cambios (git push origin feature/nueva-funcionalidad).
     5. 🔄 Abre un Pull Request.
+    ```
 
 ## 📜 Licencia
     ```
