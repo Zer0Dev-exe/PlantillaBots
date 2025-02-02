@@ -11,8 +11,9 @@
 
 ## ⚙️ Requisitos
 
-- 📌 [Node.js](https://nodejs.org/) v14 o superior
+- 📌 [Node.js](https://nodejs.org/) v14 o superior ( yo uso v21.4.0 )
 - 📌 [npm](https://www.npmjs.com/)
+- 📌 [Servidor MongoDB Tutorial](https://www.youtube.com/watch?v=7jH__3ieGS0)
 
 ## 📥 Instalación
 
