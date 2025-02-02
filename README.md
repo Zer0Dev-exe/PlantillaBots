@@ -63,3 +63,11 @@ Para iniciar el bot, usa el siguiente comando:
 
 ## 📜 Licencia
     📄 Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
+
+## 🤔 Cambios a Futuro 
+    ✍️ Sistema de autocompletados
+    ✍️ Integración a diferentes bases de datos
+    ✍️ Implementación de un sistema de logs
+    ✍️ Implementación de un sistema de alertas
+    ✍️ Implementación de un sistema de seguridad
+    ✍️ Añadir especificaciones en comandos
