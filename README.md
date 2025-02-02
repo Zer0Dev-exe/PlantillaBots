@@ -54,15 +54,12 @@ Para iniciar el bot, usa el siguiente comando:
 
 ## 🤝 Contribuciones
     Las contribuciones son bienvenidas. Si deseas contribuir, sigue estos pasos:
-    ```
+
     1. 🍴 Haz un fork del proyecto.
     2. 🌱 Crea una nueva rama (git checkout -b feature/nueva-funcionalidad).
     3. 🛠️ Realiza tus cambios y haz commit (git commit -am 'Añadir nueva funcionalidad').
     4. 🚀 Sube tus cambios (git push origin feature/nueva-funcionalidad).
     5. 🔄 Abre un Pull Request.
-    ```
 
 ## 📜 Licencia
-    ```
     📄 Este proyecto está bajo la licencia MIT. Consulta el archivo LICENSE para más detalles.
-    ```
