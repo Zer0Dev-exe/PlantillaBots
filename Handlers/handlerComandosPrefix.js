@@ -1,16 +1,42 @@
+const fs = require('fs');
+const path = require('path');
+
 async function loadPrefix(client) {
-    const { loadFiles } = require('../Eventos/Funciones/fileLoader.js')
-    const fs = require('fs');
+    // Limpiar los prefijos cargados anteriormente
+    await client.prefixs.clear();
 
-    await client.prefixs.clear()
-    const Files = await loadFiles('ComandosPrefix')
+    // Ruta del directorio que contiene los comandos
+    const dirName = path.join(process.cwd(), 'ComandosPrefix');
 
+    // Obtener todos los archivos .js dentro del directorio y subdirectorios
+    const getAllFiles = (dir, fileList = []) => {
+        const files = fs.readdirSync(dir);
+        files.forEach((file) => {
+            const fullPath = path.join(dir, file);
+            if (fs.statSync(fullPath).isDirectory()) {
+                getAllFiles(fullPath, fileList);
+            } else if (file.endsWith('.js')) {
+                fileList.push(fullPath);
+            }
+        });
+        return fileList;
+    };
+
+    const Files = getAllFiles(dirName);
+
+    // Cargar cada archivo y registrar los prefijos
     Files.forEach((file) => {
+        delete require.cache[require.resolve(file)]; // Limpiar la caché del módulo
         const prefixs = require(file);
         client.prefixs.set(prefixs.name, prefixs);
-        const commandName = file.split('/').pop().replace('.js', ''); // This line extracts the command name from the file path and removes the '.js' extension
-        console.log(`[   BOT-PREFIX    ]`.underline.blue + " --- Cargando  ".blue + `  ${commandName}`.blue);
-    })
+
+        const commandName = path.basename(file, '.js'); // Obtener el nombre del comando
+        console.log(
+            `[   BOT-PREFIX    ]`.underline.blue +
+                " --- Cargando  ".blue +
+                `  ${commandName}`.blue
+        );
+    });
 }
 
-module.exports = { loadPrefix }
+module.exports = { loadPrefix };
