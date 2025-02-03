@@ -1,4 +1,5 @@
 const { PermissionsBitField, EmbedBuilder } = require('discord.js');
+const Configuracion = require('../../Esquemas/ConfiguracionSchema');
 
 module.exports = {
   name: "interactionCreate",
@@ -12,16 +13,60 @@ module.exports = {
         });
       }
 
-      if (command.devMode && interaction.user.id !== '8175157397114061402') {
-        return interaction.reply({
+      const guildId = interaction.guild.id;
+      const config = await Configuracion.findOne({ guildId });
+
+      if (command.admin) {
+        if (!interaction.member.permissions.has(PermissionsBitField.Flags.Administrator)) {
+          return interaction.reply({
             embeds: [
-                new EmbedBuilder()
-                    .setColor('Red')
-                    .setDescription(':warning: | Este comando esta en desarrollo, intenta más tarde')
+              new EmbedBuilder()
+                .setColor('Red')
+                .setDescription(':warning: | Este comando es solo para administradores')
             ],
             ephemeral: true
-        })
-    }
+          });
+        }
+      }
+
+      if (command.dev) {
+        if (!config || !config.Developers.includes(interaction.user.id)) {
+          return interaction.reply({
+            embeds: [
+              new EmbedBuilder()
+                .setColor('Red')
+                .setDescription(':warning: | Este comando es solo para desarrolladores')
+            ],
+            ephemeral: true
+          });
+        }
+      }
+
+      if (command.staff) {
+        const memberRoles = interaction.member.roles.cache.map(role => role.id);
+        const hasStaffRole = config && config.StaffRoles.some(roleId => memberRoles.includes(roleId));
+        if (!hasStaffRole) {
+          return interaction.reply({
+            embeds: [
+              new EmbedBuilder()
+                .setColor('Red')
+                .setDescription(':warning: | Este comando es solo para el staff')
+            ],
+            ephemeral: true
+          });
+        }
+      }
+
+      if (command.desarrollo && (!config || !config.Developers.includes(interaction.user.id))) {
+        return interaction.reply({
+          embeds: [
+            new EmbedBuilder()
+              .setColor('Red')
+              .setDescription(':warning: | Este comando está en desarrollo, intenta más tarde')
+          ],
+          ephemeral: true
+        });
+      }
 
       // Si pasa todas las verificaciones, ejecuta el comando
       try {
